@@ -4,6 +4,7 @@
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <title>LC - lcalder.dev</title>
     <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
     <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="../../images/lc.png">
@@ -51,8 +52,13 @@
                 }
             }
         };
-        
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
 </script>
+<script src="../../lightbox-plus-jquery.js"></script>
 
 <input type="file" id="fileInput" style="display: none;">
 
@@ -60,14 +66,13 @@
 
 <body>
     <div class="nav-bar">
-        <img class="logo" src="../../images/lc.png" alt="logo">
+        <a href="../hogar.html"><img class="logo" src="../../images/lc.png" alt="logo"></a>
         <nav class="nav">
             <ul>
-                <li class="nav-button"><a href="../home">Home</a></li>
-                <li class="nav-button"><a href="../about">About</a></li>
-                <li class="nav-button"><a href="../projects">Projects</a></li>
-                <li class="nav-button"><a href="../tutor">Tutor</a></li>
-                <li class="lang-button"><a href="../es/home">Español</a></li>
+                <li class="nav-button"><a href="../../en/home.html">Home</a></li>
+                <li class="nav-button"><a href="../../en/about.html">About</a></li>
+                <li class="nav-button"><a href="../../en/projects.html">Projects</a></li>
+                <li class="nav-button"><a href="../../en/tutor.html">Tutor</a></li>
             </ul>
         </nav>
         <div onclick = "toggleNavBar()" class = "nav-menu-container">
@@ -77,11 +82,10 @@
 
     <div id = "mobile-nav-bar">
         <ul>
-            <li class="nav-button"><a href="../home">Home</a></li>
-            <li class="nav-button"><a href="../about">About</a></li>
-            <li class="nav-button"><a href="../projects">Projects</a></li>
-            <li class="nav-button"><a href="../tutor">Tutor</a></li>
-            <li class="lang-button"><a href="../es/home">Español</a></li>
+            <li class="nav-button"><a href="../../en/home.html">Home</a></li>
+            <li class="nav-button"><a href="../../en/about.html">About</a></li>
+            <li class="nav-button"><a href="../../en/projects.html">Projects</a></li>
+            <li class="nav-button"><a href="../../en/tutor.html">Tutor</a></li>
         </ul>
     </div>
     
@@ -96,7 +100,7 @@
         <p>I drew inspiration from <span class = "ws">iuri.is</span> (you can find his work linked <a class = "link" href = "https://iuri.is" target = "_blank" style = "color:#759ee6; font-weight: bold;">here</a>). Studying his HTML & CSS writing (using the <span class = "ws">inspect</span> feature on a browser), I picked up on formatting and styling techniques that were at the time foreign to me. Inserting these into my own work, the website slowly began to take shape.</p>
         <p>I also learned how to write HTML & CSS from <span class = "ws">W3Schools</span>, a great resource, and <span class = "ws">StackOverflow</span>. ChatGPT wasn't yet around at the time that I created this site, so that tool was not put into usage for this project.</p>
         <br>
-        <p style = "color:white; font-weight: bold;">If you'd like to view the project yourself, I have uploaded the code to a GitHub repository linked <a class = "link" href = "https://github.com/logancalder/Website" target = "_blank" style = "color:#759ee6">here</a>.</p>
+        <p style = "color:white; font-weight: bold;">If you'd like to view the project yourself, I have uploaded the code to a GitHub repository linked <a class = "link" href = "https://github.com/logancalder/lcalder.dev" target = "_blank" style = "color:#759ee6">here</a>.</p>
         <br>
         <p><i>For the interactible nodes on the home screen, I used an open source JS library that I cannot find again :(</i></p>
     </div>
@@ -105,14 +109,17 @@
         <div class = "container">
             
             <div class = "photo">
+                <a href="../../images/projects/old_web/ss1.jpg" data-lightbox="models" class="imagecrop">
                 <img src="../../images/projects/old_web/ss1.jpg" id="post-img">
             </div>
             
             <div class = "photo">
+                <a href="../../images/projects/old_web/ss2.jpg" data-lightbox="models" class="imagecrop">
                 <img src="../../images/projects/old_web/ss2.jpg" id="post-img">
             </div>
 
             <div class = "photo">
+                <a href="../../images/projects/old_web/ss3.jpg" data-lightbox="models" class="imagecrop">
                 <img src="../../images/projects/old_web/ss3.jpg" id="post-img">
             </div>
         </div>
