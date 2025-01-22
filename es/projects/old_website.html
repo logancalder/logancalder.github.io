@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - lcalder.dev</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        
+</script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <img class="logo" src="../../images/lc.png" alt="logo">
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home.html">Home</a></li>
+                <li class="nav-button"><a href="../about.html">About</a></li>
+                <li class="nav-button"><a href="../projects.html">Projects</a></li>
+                <li class="nav-button"><a href="../tutor.html">Tutor</a></li>
+                <li class="lang-button"><a href="../es/home.html">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home.html">Home</a></li>
+            <li class="nav-button"><a href="../about.html">About</a></li>
+            <li class="nav-button"><a href="../projects.html">Projects</a></li>
+            <li class="nav-button"><a href="../tutor.html">Tutor</a></li>
+            <li class="lang-button"><a href="../es/home.html">Español</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/oldweb.jpg" id="header">
+    </div>
+
+    <div class = "content">
+        <h2 class = "oldweb">This HTML project was my old website that has since been replaced by the one you are on now.</h2>
+        <p>What you see here is what this website used to be, from <span class = "ws">2020-2024</span>. This was my first HTML project, from which I learned the core basics of frontend web-design and UI interface. While not extremely pretty, I had created this website <span class = "ws">entirely</span> on my own, without the help or contribution of anybody else. Just <span class = "ws">me</span>, some <span class = "ws">YouTube</span>, and <span class = "ws">10 hours</span> of my time. From there, the website grew to feature new projects & update my work experience.</p>
+        <p>I had wanted something that <span class = "ws">stood out</span>, something that made me unique. In a world of endless software engineers and developers, a resume simply does not set you apart from the rest of the crowd anymore. Knowing this, I wanted a <span class = "ws">flashy</span> way to display my past <span class = "ws">work</span>, <span class = "ws">skills</span>, and <span class = "ws">other information</span> about me.</p>
+        <p>I drew inspiration from <span class = "ws">iuri.is</span> (you can find his work linked <a class = "link" href = "https://iuri.is" target = "_blank" style = "color:#759ee6; font-weight: bold;">here</a>). Studying his HTML & CSS writing (using the <span class = "ws">inspect</span> feature on a browser), I picked up on formatting and styling techniques that were at the time foreign to me. Inserting these into my own work, the website slowly began to take shape.</p>
+        <p>I also learned how to write HTML & CSS from <span class = "ws">W3Schools</span>, a great resource, and <span class = "ws">StackOverflow</span>. ChatGPT wasn't yet around at the time that I created this site, so that tool was not put into usage for this project.</p>
+        <br>
+        <p style = "color:white; font-weight: bold;">If you'd like to view the project yourself, I have uploaded the code to a GitHub repository linked <a class = "link" href = "https://github.com/logancalder/Website" target = "_blank" style = "color:#759ee6">here</a>.</p>
+        <br>
+        <p><i>For the interactible nodes on the home screen, I used an open source JS library that I cannot find again :(</i></p>
+    </div>
+
+    <div class = "gallery">
+        <div class = "container">
+            
+            <div class = "photo">
+                <img src="../../images/projects/old_web/ss1.jpg" id="post-img">
+            </div>
+            
+            <div class = "photo">
+                <img src="../../images/projects/old_web/ss2.jpg" id="post-img">
+            </div>
+
+            <div class = "photo">
+                <img src="../../images/projects/old_web/ss3.jpg" id="post-img">
+            </div>
+        </div>
+    </div>
+    
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>

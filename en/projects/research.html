@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - Research</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+</script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <img class="logo" src="../../images/lc.png" alt="logo">
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home.html">Home</a></li>
+                <li class="nav-button"><a href="../about.html">About</a></li>
+                <li class="nav-button"><a href="../projects.html">Projects</a></li>
+                <li class="nav-button"><a href="../tutor.html">Tutor</a></li>
+                <li class="lang-button"><a href="../es/home.html">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home.html">Home</a></li>
+            <li class="nav-button"><a href="../about.html">About</a></li>
+            <li class="nav-button"><a href="../projects.html">Projects</a></li>
+            <li class="nav-button"><a href="../tutor.html">Tutor</a></li>
+            <li class="lang-button"><a href="../es/home.html">Español</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/researchbanner.jpg" id="header">
+        <div class = "text">Performance Tuning Research</div>
+    </div>
+
+    <div class = "content">
+        <h2 class = "research">Beginning in 2023, I joined a research study on randomized linear algebra algorithims.</h2>
+        <p>I have been fortunate enough to join a professor at Santa Clara University in a field of research concerning <span class = "r">randomized linear algorithim runtime</span> on various hardware setups. While the research has just begun recently, I hope to be able to share more in the future about what we find, and the process along the way.</p>
+        <p>So far, I have been observing <span class = "r">variations in simulation runtimes</span> for <span class = "r">CPU clusters</span> concerning matrix multiplications, provided varying amounts of <span class = "r">RAM</span> and <span class = "r">CPUs</span>. In the future, we intend to utilize a library, <span class = "r">RandBLAS</span>, to simulate randomized linear algebra methods. We have been collecting data using an external library named <span class = "r">PAPI</span>, which permits us to analyze data of varying areas that a computer may output during a trial, such as <span class = "r">CPU cycles</span> or <span class = "r">instruction count</span>.</p>
+        <p><i>I will continue to update this page as I make further progress in my research!</i></p>
+        <br>
+        <p style = "color:white; font-weight: bold;">If you'd like to view my research yourself, I have uploaded my scripts to a GitHub repository linked <a id = "r" href = "https://github.com/logancalder/COEN193" target = "_blank">here</a>.</p>
+    
+    </div>
+
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>
