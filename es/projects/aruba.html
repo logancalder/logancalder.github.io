@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - HPE 2023</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+</script>
+<script src="../../lightbox-plus-jquery.js"></script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <a href="../hogar"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../../en/home">Home</a></li>
+                <li class="nav-button"><a href="../../en/about">About</a></li>
+                <li class="nav-button"><a href="../../en/projects">Projects</a></li>
+                <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../../en/home">Home</a></li>
+            <li class="nav-button"><a href="../../en/about">About</a></li>
+            <li class="nav-button"><a href="../../en/projects">Projects</a></li>
+            <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/arubabanner.jpg" id="header">
+    </div>
+
+    <div class = "content">
+        <h2 class = "aruba">This last summer I accepted a return offer to intern at HPE's Aruba Networks.</h2>
+        <p>I had the pleasure of returning to HPE and working on a larger and more influential project this year. My work revolved around creating a <span class="o">backend debug API</span> (Application Programming Interface) <span class="o">service</span> that would aid developers in troubleshooting customer information.</p>
+
+        <p>This debug API was titled the <span class="o">SDWAN</span> (Software-defined wide area network) <span class="o">Debug API Service</span>, which served to provide <span class="o">JSON Debug APIs</span> for Quality Assurance, Software Engineers, and other Developers for troubleshooting purposes. JSON is a commonly used data format, allowing for easy access, searching, and sorting of information. While debug information was prior obtainable, it was not able to be returned in a way that permitted engineers to run scripts on it, which negatively impacted efficiency. Given that Aruba has over 1 million tunnels and 100 thousand routes (networking connections) for thousands of customers, this was a pressing issue.</p>
+
+        <p>Provided this, I was tasked with returning information in a way that engineers could write scripts for data collection and analysis. This involved the creation of a <span class = "o">proxy API service</span>, which would expose APIs to the user. Backend calls are made to Aruba's routing services, which then return APIs in JSON format. This was accomplished by writing a <span class = "o">Python-based microservice</span> using <span class = "o">Flask</span> and <span class = "o">FastAPI</span>. The application was then ran off of a <span class = "o">Kubernetes Pod</span> which registered with an <span class = "o">SSO token</span>, thus authenticating the user and granting permission to retrieve the data.</p>
+
+        <p><strong>Key Achievements:</strong></p>
+
+        <ul>
+            <li>Implemented a <span class = "o">Python-based debug API</span> using <span class = "o">OpenAPI</span> for automated retrieval of device tunnel and routing data.</li>
+            <li>Collaborated on <span class = "o">Kubernetes-based microservices</span> with secure API authentication and registration using <span class = "o">API Gateway</span>.</li>
+            <li>Developed a <span class = "o">full-stack web application</span> (HTML, CSS, JS) to display debug data in an intuitive UI, saving engineers and customer service teams <span class = "o">50+ hours</span> in troubleshooting.</li>
+        </ul>
+        
+    </div>
+
+    <div class = "gallery">
+        <div class = "container">
+            <div class = "photo">
+                <a href="../../images/projects/aruba/cto.jpg" data-lightbox="models" class="imagecrop"></a>
+                <img src="../../images/projects/aruba/cto.jpg" id="post-img">
+            </div>
+            
+            <div class = "photo">
+                <a href="../../images/projects/aruba/desk.jpg" data-lightbox="models" class="imagecrop"></a>
+                <img src="../../images/projects/aruba/desk.jpg" id="post-img">
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/aruba/golf.jpg" data-lightbox="models" class="imagecrop"></a>
+                <img src="../../images/projects/aruba/golf.jpg" id="post-img">
+            </div>
+            
+            <div class = "photo">
+                <a href="../../images/projects/aruba/group.jpg" data-lightbox="models" class="imagecrop"></a>
+                <img src="../../images/projects/aruba/group.jpg" id="post-img">
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/aruba/present.jpg" data-lightbox="models" class="imagecrop"></a>
+                <img src="../../images/projects/aruba/present.jpg" id="post-img">
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/aruba/pool.jpg" data-lightbox="models" class="imagecrop"></a>
+                <img src="../../images/projects/aruba/pool.jpg" id="post-img">
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>
