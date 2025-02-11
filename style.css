@@ -54,10 +54,20 @@ body{
     display:none;
 }
 
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
 #name{
-    background: -webkit-linear-gradient(left, rgb(133, 196, 255) 20%, rgb(107, 182, 101) 70%);
+    background: linear-gradient(45deg, rgb(133, 196, 255), rgb(94, 218, 85), rgb(99, 226, 254), rgb(107, 182, 101));
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 10s infinite linear;
 }
 
 #colored-button,#transparent-button{
@@ -436,10 +446,18 @@ input[type="submit"]:hover{
         display:none;
     }
 
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
     #name{
-        background: -webkit-linear-gradient(left, rgb(133, 196, 255) 20%, rgb(107, 182, 101) 70%);
+        background: linear-gradient(45deg, rgb(133, 196, 255), rgb(94, 218, 85), rgb(99, 226, 254), rgb(107, 182, 101));
+        background-size: 300% 300%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        animation: gradientAnimation 10s infinite linear;
     }
 
     #colored-button,#transparent-button{
