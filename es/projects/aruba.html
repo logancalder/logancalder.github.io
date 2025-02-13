@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
-    <title>LC - HPE 2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LC - Aruba 2024</title>
     <link rel="stylesheet" href="style-project-page.css">
     <link rel="stylesheet" type="text/css" href="../../lightbox.css">
     <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
@@ -62,17 +62,18 @@
 
 <input type="file" id="fileInput" style="display: none;">
 
-<!-- make fireflies for hannah to play with :") -->
+<!-- hacer luciérnagas para que Hannah juegue con ellas :") -->
 
 <body>
     <div class="nav-bar">
-        <a href="../hogar"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
         <nav class="nav">
             <ul>
-                <li class="nav-button"><a href="../../en/home">Home</a></li>
-                <li class="nav-button"><a href="../../en/about">About</a></li>
-                <li class="nav-button"><a href="../../en/projects">Projects</a></li>
-                <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+                <li class="nav-button"><a href="../home">Hogar</a></li>
+                <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+                <li class="nav-button"><a href="../projects">Proyectos</a></li>
+                <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+                <li class="lang-button"><a href="../../en/projects/aruba">English</a></li>
             </ul>
         </nav>
         <div onclick = "toggleNavBar()" class = "nav-menu-container">
@@ -82,10 +83,11 @@
 
     <div id = "mobile-nav-bar">
         <ul>
-            <li class="nav-button"><a href="../../en/home">Home</a></li>
-            <li class="nav-button"><a href="../../en/about">About</a></li>
-            <li class="nav-button"><a href="../../en/projects">Projects</a></li>
-            <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+            <li class="nav-button"><a href="../home">Hogar</a></li>
+            <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+            <li class="nav-button"><a href="../projects">Proyectos</a></li>
+            <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+            <li class="lang-button"><a href="../../en/projects/aruba">English</a></li>
         </ul>
     </div>
     
@@ -94,19 +96,19 @@
     </div>
 
     <div class = "content">
-        <h2 class = "aruba">This last summer I accepted a return offer to intern at HPE's Aruba Networks.</h2>
-        <p>I had the pleasure of returning to HPE and working on a larger and more influential project this year. My work revolved around creating a <span class="o">backend debug API</span> (Application Programming Interface) <span class="o">service</span> that would aid developers in troubleshooting customer information.</p>
+        <h2 class = "aruba">Este último verano acepté una oferta de regreso para ser pasante en Aruba Networks de HPE.</h2>
+        <p>Tuve el placer de regresar a HPE y trabajar en un proyecto más grande y más influyente este año. Mi trabajo giró en torno a la creación de un <span class="o">servicio de API de depuración de backend</span> (Interfaz de Programación de Aplicaciones) que ayudaría a los desarrolladores a solucionar problemas de información del cliente.</p>
 
-        <p>This debug API was titled the <span class="o">SDWAN</span> (Software-defined wide area network) <span class="o">Debug API Service</span>, which served to provide <span class="o">JSON Debug APIs</span> for Quality Assurance, Software Engineers, and other Developers for troubleshooting purposes. JSON is a commonly used data format, allowing for easy access, searching, and sorting of information. While debug information was prior obtainable, it was not able to be returned in a way that permitted engineers to run scripts on it, which negatively impacted efficiency. Given that Aruba has over 1 million tunnels and 100 thousand routes (networking connections) for thousands of customers, this was a pressing issue.</p>
+        <p>Esta API de depuración se tituló <span class="o">SDWAN</span> (Red de Área Amplia Definida por Software) <span class="o">Servicio de API de Depuración</span>, que servía para proporcionar <span class="o">APIs de depuración JSON</span> para Garantía de Calidad, Ingenieros de Software y otros Desarrolladores con fines de solución de problemas. JSON es un formato de datos comúnmente utilizado, que permite un fácil acceso, búsqueda y clasificación de información. Aunque la información de depuración era obtenible anteriormente, no se podía devolver de una manera que permitiera a los ingenieros ejecutar scripts sobre ella, lo que afectaba negativamente la eficiencia. Dado que Aruba tiene más de 1 millón de túneles y 100 mil rutas (conexiones de red) para miles de clientes, este era un problema urgente.</p>
 
-        <p>Provided this, I was tasked with returning information in a way that engineers could write scripts for data collection and analysis. This involved the creation of a <span class = "o">proxy API service</span>, which would expose APIs to the user. Backend calls are made to Aruba's routing services, which then return APIs in JSON format. This was accomplished by writing a <span class = "o">Python-based microservice</span> using <span class = "o">Flask</span> and <span class = "o">FastAPI</span>. The application was then ran off of a <span class = "o">Kubernetes Pod</span> which registered with an <span class = "o">SSO token</span>, thus authenticating the user and granting permission to retrieve the data.</p>
+        <p>Proporcionado esto, se me asignó la tarea de devolver información de una manera que los ingenieros pudieran escribir scripts para la recopilación y el análisis de datos. Esto involucró la creación de un <span class = "o">servicio de API proxy</span>, que expondría APIs al usuario. Se realizan llamadas de backend a los servicios de enrutamiento de Aruba, que luego devuelven APIs en formato JSON. Esto se logró escribiendo un <span class = "o">microservicio basado en Python</span> utilizando <span class = "o">Flask</span> y <span class = "o">FastAPI</span>. La aplicación se ejecutó en un <span class = "o">Pod de Kubernetes</span> que se registró con un <span class = "o">token SSO</span>, autenticando así al usuario y otorgando permiso para recuperar los datos.</p>
 
-        <p><strong>Key Achievements:</strong></p>
+        <p><strong>Logros Clave:</strong></p>
 
         <ul>
-            <li>Implemented a <span class = "o">Python-based debug API</span> using <span class = "o">OpenAPI</span> for automated retrieval of device tunnel and routing data.</li>
-            <li>Collaborated on <span class = "o">Kubernetes-based microservices</span> with secure API authentication and registration using <span class = "o">API Gateway</span>.</li>
-            <li>Developed a <span class = "o">full-stack web application</span> (HTML, CSS, JS) to display debug data in an intuitive UI, saving engineers and customer service teams <span class = "o">50+ hours</span> in troubleshooting.</li>
+            <li>Implementé una <span class = "o">API de depuración basada en Python</span> utilizando <span class = "o">OpenAPI</span> para la recuperación automatizada de datos de túneles y enrutamiento de dispositivos.</li>
+            <li>Colaboré en <span class = "o">microservicios basados en Kubernetes</span> con autenticación y registro seguro de API utilizando <span class = "o">API Gateway</span>.</li>
+            <li>Desarrollé una <span class = "o">aplicación web de pila completa</span> (HTML, CSS, JS) para mostrar datos de depuración en una interfaz de usuario intuitiva, ahorrando a los ingenieros y equipos de servicio al cliente <span class = "o">50+ horas</span> en solución de problemas.</li>
         </ul>
         
     </div>
@@ -148,7 +150,7 @@
 
     
     <div class = "footer">
-        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+        Hecho con <span style = "color: white;font-weight: bold;">♥</span> por Logan C
     </div>
 </body>
 </html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - Valentines 2025</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+</script>
+<script src="../../lightbox-plus-jquery.js"></script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home">Home</a></li>
+                <li class="nav-button"><a href="../about">About</a></li>
+                <li class="nav-button"><a href="../projects">Projects</a></li>
+                <li class="nav-button"><a href="../tutor">Tutor</a></li>
+                <li class="lang-button"><a href="../../es/projects/valentines2025">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home">Home</a></li>
+            <li class="nav-button"><a href="../about">About</a></li>
+            <li class="nav-button"><a href="../projects">Projects</a></li>
+            <li class="nav-button"><a href="../tutor">Tutor</a></li>
+            <li class="lang-button"><a href="../../es/projects/valentines2025">Español</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/game_banner.jpg" id="header">
+        <div class = "text">Valentines 2025 Video Game</div>
+    </div>
+
+    <div class = "content">
+        <h2 class = "v2025">This year, I developed an interactive video game asking my girlfriend to be my Valentine!</h2>
+        <p>Having made a <span class = "v">website</span> last year, I felt compelled to "step up my game" a little bit, and decided to develop a <span class = "v">video game</span> in <span class = "v">Unity</span>. I had recently been working with this technology, and feeling as though I had a strong hold on the engine, I decided to apply these skills to a <span class = "v">fun</span> way of asking her.</p>
+        <p>I had seen a lot of posts regarding asking significant others to be Valentines, but I was yet to see a <span class = "v">video game</span>. I was slightly inspired by a <span class = "v">web page</span> featuring unique <span class = "v">animations</span>, <span class = "v">pixel art</span>, and <span class = "v">sounds</span>, but having no idea how to develop this I opted for a <span class = "v">game</span>.</p>
+        <p>Overall, it was a very <span class = "v">fun learning experience</span>, and I took away skills in <span class = "v">2D game development</span>, including <span class = "v">sprite animation</span>, <span class = "v">object interactions</span>, <span class = "v">tilemaps</span>, and <span class = "v">dialogue text boxes</span>. I had expected this project to pose a bit of a challenge, but I actually managed to finish it in <span class = "v">less than 24h</span>.</p>
+        <p>My <span class = "v">game</span> revolves around a <span class = "v">pixel-art island</span> (I purchased these assets for <span class = "v">$3</span>), and a player who encounters a <span class = "v">flower</span>. This <span class = "v">tulip</span>, which is <span class = "v">pink</span> since she loves <span class = "v">pink</span>, speaks to the player and pops up an <span class = "v">interactive dialogue box</span>. It then asks the user "<span class = "v">yes</span>" or "<span class = "v">no</span>" regarding if she would like to be my Valentine, but "<span class = "v">no</span>" isn't actually an answer ;) <span class = "v">Balloons</span> will then fly upwards in <span class = "v">celebration</span> when she eventually says <span class = "v">yes</span>!</p>
+        <br>
+        <p style = "color:white; font-weight: bold;">If you would like to view the <span class = "v">project</span> yourself or play the <span class = "v">game</span>, I've posted it to my <span class = "v">GitHub</span> linked <a class = "link" href = "https://github.com/logancalder/Valentines2025" target = "_blank">here</a>.</p>
+    </div>
+
+    <div class = "gallery">
+        <div class = "container">
+            
+            <div class = "photo">
+                <a href="../../images/projects/valentines2025/unity.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/valentines2025/unity.png" id="post-img"></a>
+            </div>
+            
+            <div class = "photo">
+                <a href="../../images/projects/valentines2025/tilemap.png" data-lightbox="models" class="imagecrop">
+                    <img src="../../images/projects/valentines2025/tilemap.png" id="post-img"></a>
+                </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/valentines2025/load.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/valentines2025/load.png" id="post-img"></a>
+            </div>
+            
+            <div class = "photo">
+            <a href="../../images/projects/valentines2025/interact.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/valentines2025/interact.png" id="post-img"></a>
+            </div>
+            
+            <div class = "photo">
+                <a href="../../images/projects/valentines2025/dialogue.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/valentines2025/dialogue.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/valentines2025/balloons.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/valentines2025/balloons.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/valentines2025/menu.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/valentines2025/menu.png" id="post-img"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>

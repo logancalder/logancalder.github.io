@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
-    <title>LC - Research</title>
+    <title>LC - Investigación</title>
     <link rel="stylesheet" href="style-project-page.css">
     <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -60,17 +60,18 @@
 
 <input type="file" id="fileInput" style="display: none;">
 
-<!-- make fireflies for hannah to play with :") -->
+<!-- hacer luciérnagas para que Hannah juegue con ellas :") -->
 
 <body>
     <div class="nav-bar">
-        <a href="../hogar"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
         <nav class="nav">
             <ul>
-                <li class="nav-button"><a href="../../en/home">Home</a></li>
-                <li class="nav-button"><a href="../../en/about">About</a></li>
-                <li class="nav-button"><a href="../../en/projects">Projects</a></li>
-                <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+                <li class="nav-button"><a href="../home">Hogar</a></li>
+                <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+                <li class="nav-button"><a href="../projects">Proyectos</a></li>
+                <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+                <li class="lang-button"><a href="../../en/projects/research">English</a></li>
             </ul>
         </nav>
         <div onclick = "toggleNavBar()" class = "nav-menu-container">
@@ -80,34 +81,35 @@
 
     <div id = "mobile-nav-bar">
         <ul>
-            <li class="nav-button"><a href="../../en/home">Home</a></li>
-            <li class="nav-button"><a href="../../en/about">About</a></li>
-            <li class="nav-button"><a href="../../en/projects">Projects</a></li>
-            <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+            <li class="nav-button"><a href="../home">Hogar</a></li>
+            <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+            <li class="nav-button"><a href="../projects">Proyectos</a></li>
+            <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+            <li class="lang-button"><a href="../../en/projects/research">English</a></li>
         </ul>
     </div>
     
     <div class = "header">
         <img src="../../images/projects/banners/researchbanner.jpg" id="header">
-        <div class = "text">Performance Tuning Research</div>
+        <div class = "text">Investigación sobre Optimización de Rendimiento</div>
     </div>
 
     <div class = "content">
-        <h2 class = "research">Beginning in 2023, I joined a research study regarding the performance analysis and tuning of algorithims.</h2>
-        <p>I have been fortunate enough to join a professor at Santa Clara University in a field of research concerning <span class = "r">randomized Dense and Sparse Sketching</span>, a branch of Linear Algebra. This is an approach to reducing matrices and vectors, theoretically resulting in the faster computation of matrix multiplication. For my research specifically, I focused on <span class = "r">RandBLAS'</span> Dense and Sparse sketching (BLAS stands for Basic Linear Algebra Subprograms), and the subroutines they contained.</p>
-        <p>My approach to analyzing these subroutines was to utilize a performance counter software called <span class = "r">PAPI</span> (Pathway Activity Profiling). This tool, when put to use, is capable of returning system information recorded during the time of the sketches. This contains, but is not limited to, <span class = "r">Cycles</span>, <span class = "r">Instructions</span>, and <span class = "r">Runtime</span>. Notably of these three, Instructions would provide me essential information as to if the subroutine being measured was <span class = "r">parallelized</span>, a topic I will address later.</p>
-        <p>I began by first installing a plethora of libraries, all used to run either RandBLAS or its dependencies. I also had to create adaptable functions for PAPI that could be easily integrated into various files that I wished to measure inside of. This took quite some time (for some reasons out of my control at times), but once set up, I was able to begin my analysis. This process consisted of connecting to SCU's <span class = "r">WaveHPC</span>, a multi-core cluster of high-performance computing servers. On this platform I would run my simulations on a <span class = "r">CPU Node</span>, which is an adaptable node in which I can allocate the number of threads and cores I wish to utilize.</p>
-        <p>An automated Shell script would then alter the number of threads (a common parameter I changed), as well as matrix sizes. These simulations would then be ran and stored into a <span class = "r">.csv</span> file. I chose this format opposed to a database such as MySQL as I would later use .csv as an input for a Machine Learning interpretation software, which would visualize my data.</p>
-        <p>For the analysis of the data, I chose to use <span class = "r">Dashing</span>, which had the capability of reading and interpreting what was the most influential events (this is the name given to data obtained from the simulation) that would affect runtime. It would then display these results into easy-to-analyze formats, such as <span class = "r">heatmaps</span> or <span class = "r">bar charts</span>.</p>
-        <p>Data obtained from these simulations was generally inconclusive. However, some events did tend to have a recurring effect on runtime and overall performance, and thus will be kept in mind for future optimization efforts. If you are interested in learning more about those events specifically, or other details of my work, you may view my formal report for the last Quarter during which I worked on this research.</p>
-        <p><i>At the time of writing, I still have one more Quarter remaining, thus making my work incomplete.</i></p>
+        <h2 class = "research">A partir de 2023, me uní a un estudio de investigación sobre el análisis y la optimización del rendimiento de algoritmos.</h2>
+        <p>He tenido la suerte de unirme a un profesor de la Universidad de Santa Clara en un campo de investigación relacionado con <span class = "r">Sketching Denso y Disperso Aleatorio</span>, una rama del Álgebra Lineal. Este es un enfoque para reducir matrices y vectores, lo que teóricamente resulta en un cálculo más rápido de la multiplicación de matrices. Para mi investigación específicamente, me centré en el <span class = "r">RandBLAS'</span> Sketching Denso y Disperso (BLAS significa Subprogramas Básicos de Álgebra Lineal), y las subrutinas que contenían.</p>
+        <p>Mi enfoque para analizar estas subrutinas fue utilizar un software de contador de rendimiento llamado <span class = "r">PAPI</span> (Perfil de Actividad de la Vía). Esta herramienta, cuando se utiliza, es capaz de devolver información del sistema registrada durante el tiempo de los sketches. Esto incluye, pero no se limita a, <span class = "r">Ciclos</span>, <span class = "r">Instrucciones</span> y <span class = "r">Tiempo de Ejecución</span>. Notablemente de estos tres, las Instrucciones me proporcionarían información esencial sobre si la subrutina medida estaba <span class = "r">paralelizada</span>, un tema que abordaré más adelante.</p>
+        <p>Comencé instalando primero una gran cantidad de bibliotecas, todas utilizadas para ejecutar RandBLAS o sus dependencias. También tuve que crear funciones adaptables para PAPI que pudieran integrarse fácilmente en varios archivos que deseaba medir. Esto tomó bastante tiempo (por algunas razones fuera de mi control a veces), pero una vez configurado, pude comenzar mi análisis. Este proceso consistió en conectarse al <span class = "r">WaveHPC</span> de SCU, un clúster de servidores de computación de alto rendimiento con múltiples núcleos. En esta plataforma ejecutaría mis simulaciones en un <span class = "r">Nodo de CPU</span>, que es un nodo adaptable en el que puedo asignar el número de hilos y núcleos que deseo utilizar.</p>
+        <p>Un script automatizado de Shell alteraría entonces el número de hilos (un parámetro común que cambié), así como los tamaños de las matrices. Estas simulaciones se ejecutarían y almacenarían en un archivo <span class = "r">.csv</span>. Elegí este formato en lugar de una base de datos como MySQL, ya que más tarde usaría .csv como entrada para un software de interpretación de Aprendizaje Automático, que visualizaría mis datos.</p>
+        <p>Para el análisis de los datos, elegí usar <span class = "r">Dashing</span>, que tenía la capacidad de leer e interpretar cuáles eran los eventos más influyentes (este es el nombre dado a los datos obtenidos de la simulación) que afectarían el tiempo de ejecución. Luego mostraría estos resultados en formatos fáciles de analizar, como <span class = "r">mapas de calor</span> o <span class = "r">gráficos de barras</span>.</p>
+        <p>Los datos obtenidos de estas simulaciones fueron generalmente inconclusos. Sin embargo, algunos eventos tendieron a tener un efecto recurrente en el tiempo de ejecución y el rendimiento general, y por lo tanto se tendrán en cuenta para futuros esfuerzos de optimización. Si estás interesado en aprender más sobre esos eventos específicamente, u otros detalles de mi trabajo, puedes ver mi informe formal del último trimestre durante el cual trabajé en esta investigación.</p>
+        <p><i>En el momento de escribir esto, todavía me queda un trimestre más, por lo que mi trabajo está incompleto.</i></p>
         <br>
-        <p style = "color:white; font-weight: bold;">If you'd like to view my research yourself, I have uploaded my scripts to a GitHub repository linked <a id = "r" href = "https://github.com/logancalder/COEN193" target = "_blank">here</a>.</p>
-        <p style = "color:white; font-weight: bold;">To view my Spring Quarter 2024 Report, click <a id = "r" href = "../../Logan_Calder_Spring2024_Undergraduate_Research_Report.pdf" target = "_blank">here</a>.</p>
+        <p style = "color:white; font-weight: bold;">Si deseas ver mi investigación tú mismo, he subido mis scripts a un repositorio de GitHub vinculado <a id = "r" href = "https://github.com/logancalder/COEN193" target = "_blank">aquí</a>.</p>
+        <p style = "color:white; font-weight: bold;">Para ver mi Informe del Trimestre de Primavera 2024, haz clic <a id = "r" href = "../../Logan_Calder_Spring2024_Undergraduate_Research_Report.pdf" target = "_blank">aquí</a>.</p>
     </div>
 
     <div class = "footer">
-        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+        Hecho con <span style = "color: white;font-weight: bold;">♥</span> por Logan C
     </div>
 </body>
 </html>

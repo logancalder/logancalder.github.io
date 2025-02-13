@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LC - Treehacks 2023</title>
     <link rel="stylesheet" href="style-project-page.css">
     <link rel="stylesheet" type="text/css" href="../../lightbox.css">
@@ -62,17 +62,18 @@
 
 <input type="file" id="fileInput" style="display: none;">
 
-<!-- make fireflies for hannah to play with :") -->
+<!-- hacer luciérnagas para que Hannah juegue :") -->
 
 <body>
     <div class="nav-bar">
-        <a href="../hogar"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
         <nav class="nav">
             <ul>
-                <li class="nav-button"><a href="../../en/home">Home</a></li>
-                <li class="nav-button"><a href="../../en/about">About</a></li>
-                <li class="nav-button"><a href="../../en/projects">Projects</a></li>
-                <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+                <li class="nav-button"><a href="../home">Hogar</a></li>
+                <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+                <li class="nav-button"><a href="../projects">Proyectos</a></li>
+                <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+                <li class="lang-button"><a href="../../en/projects/treehacks">English</a></li>
             </ul>
         </nav>
         <div onclick = "toggleNavBar()" class = "nav-menu-container">
@@ -82,10 +83,11 @@
 
     <div id = "mobile-nav-bar">
         <ul>
-            <li class="nav-button"><a href="../../en/home">Home</a></li>
-            <li class="nav-button"><a href="../../en/about">About</a></li>
-            <li class="nav-button"><a href="../../en/projects">Projects</a></li>
-            <li class="nav-button"><a href="../../en/tutor">Tutor</a></li>
+            <li class="nav-button"><a href="../home">Hogar</a></li>
+            <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+            <li class="nav-button"><a href="../projects">Proyectos</a></li>
+            <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+            <li class="lang-button"><a href="../../en/projects/treehacks">English</a></li>
         </ul>
     </div>
     
@@ -94,26 +96,24 @@
     </div>
 
     <div class = "content">
-        <h2 class = "treehacks">I was a nominee a Repl.it's award at Stanford's 2023 Treehacks Hackathon!</h2>
-        <p>In <span class="teal">February of 2023</span>, I was invited to compete at <span class="teal">Treehacks</span>, <span class="teal">Stanford</span>'s annual Hackathon. Along with a team of <span class="teal">3 others</span>, with two of us attending our first Hackathon, we created a <span class="teal">smart AI shopping assistant</span> utilizing <span class="teal">OpenAI</span>'s JavaScript API.</p>
-        <p>My contribution to the project was a <span class="teal">user-friendly UI</span> which the user could converse with the bot. I also created a sales presentation which we used to pitch our product to judges, includes representatives from <span class="teal">OpenAI</span>, <span class="teal">Google</span>, and <span class="teal">Repl.it</span>. My work was entirely <span class="teal">frontend</span>, being a <span class="teal">user-friendly chatbox</span> to give OpenAI's API prompts and recieve responses.
-            The purpose of this work was to make asking questions as <span class="teal">simple and straight-forward</span> as possible for the customer.
+        <h2 class = "treehacks">¡Fui nominado al premio de Repl.it en el Hackathon Treehacks 2023 de Stanford!</h2>
+        <p>En <span class="teal">febrero de 2023</span>, fui invitado a competir en <span class="teal">Treehacks</span>, el Hackathon anual de <span class="teal">Stanford</span>. Junto con un equipo de <span class="teal">3 personas más</span>, con dos de nosotros asistiendo a nuestro primer Hackathon, creamos un <span class="teal">asistente de compras inteligente con IA</span> utilizando la API de JavaScript de <span class="teal">OpenAI</span>.</p>
+        <p>Mi contribución al proyecto fue una <span class="teal">interfaz de usuario amigable</span> con la que el usuario podía conversar con el bot. También creé una presentación de ventas que utilizamos para presentar nuestro producto a los jueces, incluidos representantes de <span class="teal">OpenAI</span>, <span class="teal">Google</span> y <span class="teal">Repl.it</span>. Mi trabajo fue completamente <span class="teal">frontend</span>, siendo una <span class="teal">caja de chat amigable</span> para dar indicaciones a la API de OpenAI y recibir respuestas.
+            El propósito de este trabajo era hacer que hacer preguntas fuera lo más <span class="teal">simple y directo</span> posible para el cliente.
         </p>
-        <p>My work features a <span class="teal">button</span> that appears in the bottom right of the client's screen. When clicked on, a <span class="teal">retractable chatbox</span> expands to fill 
-            the right half of the screen. Here, the user may ask <span class="teal">any question</span> regarding a product on the website.
-        Any question that is "undefined" or an empty string will not cause the AI to respond. Only when a <span class="teal">valid input</span> is provided, the AI will respond,
-            creating a <span class="teal">new reponse textbox</span> with a respective profile picture. Messages may be sent with the <span class="teal">send button</span>, and the chatbox may be closed with the <span class="teal">close button</span>.</p>
-        <p>Prior to the event, I had <span class="teal">no team or knowledge</span> of what a <span class="teal">Hackathon</span> would be like. I was very <span class="teal">excited</span>, but admittedly nervous. Around two weeks before the start date, I began reaching out to fellow hackers. Together, we managed to form a <span class="teal">team of 4</span> from across
-            the country, with none of us having met before. It also happened to be one of my <span class="teal">fellow teammates first Hackathon</span> as well!
+        <p>Mi trabajo presenta un <span class="teal">botón</span> que aparece en la esquina inferior derecha de la pantalla del cliente. Al hacer clic en él, una <span class="teal">caja de chat retráctil</span> se expande para llenar 
+            la mitad derecha de la pantalla. Aquí, el usuario puede hacer <span class="teal">cualquier pregunta</span> sobre un producto en el sitio web.
+        Cualquier pregunta que sea "indefinida" o una cadena vacía no hará que la IA responda. Solo cuando se proporciona una <span class="teal">entrada válida</span>, la IA responderá,
+            creando una <span class="teal">nueva caja de respuesta</span> con una respectiva imagen de perfil. Los mensajes se pueden enviar con el <span class="teal">botón de enviar</span>, y la caja de chat se puede cerrar con el <span class="teal">botón de cerrar</span>.</p>
+        <p>Antes del evento, no tenía <span class="teal">equipo ni conocimiento</span> de lo que sería un <span class="teal">Hackathon</span>. Estaba muy <span class="teal">emocionado</span>, pero admito que nervioso. Aproximadamente dos semanas antes de la fecha de inicio, comencé a contactar a otros hackers. Juntos, logramos formar un <span class="teal">equipo de 4</span> de todo el país, sin que ninguno de nosotros se hubiera conocido antes. ¡También resultó ser el primer Hackathon de uno de mis <span class="teal">compañeros de equipo</span>!
         <p>
-        <p>We went through many ideas and subjects of which to code, but finally settled on a <span class="teal">Smart AI</span> that could effectively <span class="teal">eliminate the need
-            for customer support</span>. The program would utilize <span class="teal">OpenAI's API</span>, and would have its own website to demonstrate both the <span class="teal">administrative and customer experience</span>.
+        <p>Pasamos por muchas ideas y temas sobre los que codificar, pero finalmente nos decidimos por una <span class="teal">IA inteligente</span> que podría <span class="teal">eliminar efectivamente la necesidad
+            de soporte al cliente</span>. El programa utilizaría la <span class="teal">API de OpenAI</span> y tendría su propio sitio web para demostrar tanto la <span class="teal">experiencia administrativa como la del cliente</span>.
         <p>
-        <p>With Treehacks being <span class="teal">36 hours</span>, we set to work right away. One of my teammates, <span class="teal">Adi</span>, focused on the <span class="teal">backend features</span> and figured out how to
-            train OpenAI's API with custom data. He then focused on how to <span class="teal">permit the AI to provide for that data</span>. My other two teammates, <span class="teal">Alyssa</span> and <span class="teal">Sabrina</span>, focused on creating the <span class="teal">frontend homepage</span> of the website, with a <span class="teal">navigation bar</span> and <span class="teal">displayable
-            product lists</span>.<p>
-        <p>As I mentioned earlier, I focused on creating the <span class="teal">actual interface</span> that the user could <span class="teal">discuss with the bot inside of</span>. Fortunately, after over 20 hours of straight coding---and much testing---our <span class="teal">program came to life</span> after linking our code.
-        <p>We were even <span class="teal">nominated for Repl'it's award</span> of the best usage of their platform, but unfortuntately did not win. Better luck next time ;)</p>
+        <p>Con Treehacks siendo de <span class="teal">36 horas</span>, nos pusimos a trabajar de inmediato. Uno de mis compañeros de equipo, <span class="teal">Adi</span>, se centró en las <span class="teal">características del backend</span> y descubrió cómo
+            entrenar la API de OpenAI con datos personalizados. Luego se centró en cómo <span class="teal">permitir que la IA proporcionara esos datos</span>. Mis otros dos compañeros de equipo, <span class="teal">Alyssa</span> y <span class="teal">Sabrina</span>, se centraron en crear la <span class="teal">página de inicio frontend</span> del sitio web, con una <span class="teal">barra de navegación</span> y <span class="teal">listas de productos desplegables</span>.<p>
+        <p>Como mencioné anteriormente, me centré en crear la <span class="teal">interfaz real</span> en la que el usuario podría <span class="teal">discutir con el bot</span>. Afortunadamente, después de más de 20 horas de codificación continua---y muchas pruebas---nuestro <span class="teal">programa cobró vida</span> después de vincular nuestro código.
+        <p>Incluso fuimos <span class="teal">nominados para el premio de Repl.it</span> por el mejor uso de su plataforma, pero desafortunadamente no ganamos. Mejor suerte la próxima vez ;)</p>
     </div>
 
     <div class = "gallery">
@@ -154,7 +154,7 @@
 
     
     <div class = "footer">
-        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+        Hecho con <span style = "color: white;font-weight: bold;">♥</span> por Logan C
     </div>
 </body>
 </html>

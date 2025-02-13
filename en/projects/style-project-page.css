@@ -139,6 +139,12 @@ display:none;
   -webkit-text-fill-color: transparent;
 }
 
+.v2025{
+  background: -webkit-linear-gradient(left, rgb(255, 206, 133) 20%, rgb(79, 197, 126) 70%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 .cream{
   background: -webkit-linear-gradient(left, #a2c3ff 20%, rgb(245, 244, 178) 70%) !important;
   -webkit-background-clip: text !important;
@@ -177,6 +183,10 @@ display:none;
 
 .c{
   color:rgb(202, 188, 241);
+}
+
+.v{
+  color:rgb(79, 197, 126);
 }
 
 .b{
@@ -263,6 +273,12 @@ display:none;
   -webkit-text-fill-color: transparent !important;
 }
 
+.v2025{
+  background: -webkit-linear-gradient(left, rgb(255, 206, 133) 20%, rgb(79, 197, 126) 70%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 .aruba{
   background: -webkit-linear-gradient(left, #f58220 20%, #ffb16d 70%) !important;
   -webkit-background-clip: text !important;
@@ -305,6 +321,10 @@ display:none;
 
 .o{
   color:#f58220;
+}
+
+.v{
+  color:rgb(79, 197, 126);
 }
 
 .teal{
