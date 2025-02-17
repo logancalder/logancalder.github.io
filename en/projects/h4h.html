@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - H4H 2025</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+</script>
+<script src="../../lightbox-plus-jquery.js"></script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home">Home</a></li>
+                <li class="nav-button"><a href="../about">About</a></li>
+                <li class="nav-button"><a href="../projects">Projects</a></li>
+                <li class="nav-button"><a href="../tutor">Tutor</a></li>
+                <li class="lang-button"><a href="../../es/projects/treehacks">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home">Home</a></li>
+            <li class="nav-button"><a href="../about">About</a></li>
+            <li class="nav-button"><a href="../projects">Projects</a></li>
+            <li class="nav-button"><a href="../tutor">Tutor</a></li>
+            <li class="lang-button"><a href="../../es/projects/treehacks">Español</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/lmkbanner.jpg" id="header">
+    </div>
+
+    <div class="content">
+        <h2 class="research">I had the pleasure of competing in SCU's <span id="r">Hack 4 Humanity 2025</span>.</h2>
+        
+        <p>My team's project for this hackathon was <span id="r">lmk</span>, an <span id="r">AI</span> and <span id="r">Next.js</span> based web service that could effectively analyze dangerous scenarios and alert respective users within close proximity.</p>
+        
+        <p>Our project was inspired by ethical concerns such as the <span id="r">bystander effect</span> and <span id="r">reporting bias</span>. People tend to hesitate to report incidents, assuming someone else will, often leading to unresolved issues. In some communities, severe incidents may be downplayed or ignored due to social pressures. We were further motivated to develop a solution due to the recent (as of the time of this writing) fires in <span id="r">Pacific Palisades</span> and the general <span id="r">Los Angeles</span> region.</p>
+        
+        <p><span id="r">lmk</span> is a platform designed to lower the barrier to reporting hazards, providing visibility to local incidents. Working to keep communities safe, this project is designed to be entirely crowd-sourced, allowing the public to maintain the service's data fully.</p>
+        
+        <p>The workflow for our project involved an incredibly well-polished frontend linked with a powerful backend and database. We utilized <span id="r">Next.js</span>, <span id="r">TailwindCSS</span>, <span id="r">ShadCN</span>, and <span id="r">Mapbox</span> to develop a professional-looking interface, complete with animations, an interactable map, and forms to submit. The backend supported this UI with <span id="r">Next.js</span>, <span id="r">Mapbox API</span>, <span id="r">OpenAI API</span>, and <span id="r">Supabase</span> (a PostgreSQL database).</p>
+        
+        <p>While some tasks were able to be completed with simple JSON retrieval, we utilized OpenAI's <span id="r">GPT 4</span> and <span id="r">4-Turbo</span> to develop an intellectually strong collection of AI agents, working together to populate pre-designed JSON templates. This data would then be sent to Supabase, from which we could fetch the data to be displayed on the map or in reports.</p>
+        
+        <p>We also designed this project with it being a startup in mind, so user authentication through <span id="r">Google accounts</span> and <span id="r">Supabase</span> provided the much-needed authorization and security for our application. Provided that this is implemented, it would not be challenging to implement paid features, permitting this project to turn into a business.</p>
+        
+        <p>Future plans for this project also include social media integration, through which we would scan posts to detect harmful or dangerous areas and appropriately warn users. Combined with this, we may send SMS messages to users if they enable location sharing with us, permitting us to warn them without the need to open the app. As an optimization, we could also revise our AI agents to work in parallel as opposed to concurrently, so as to significantly improve our submission runtime (~ 50% decrease in runtime).</p>
+        
+        <p>This project's source code is public and viewable <a id="r" href="https://github.com/NicholasLe04/hackforhumanity">here</a>, our Devpost <a id="r" href="https://devpost.com/software/lmk-2tzig6">here</a> and deployment <a id="r" href="https://lmk-kappa.vercel.app/">here</a>.</p>
+    </div>
+
+    <div class = "gallery">
+        <div class = "container">
+            
+            <div class = "photo">
+                <a href="../../images/projects/lmk/home.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/lmk/home.png" id="post-img"></a>
+            </div>
+            
+            <div class = "photo">
+                <a href="../../images/projects/lmk/map.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/lmk/map.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/lmk/report.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/lmk/report.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/lmk/la.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/lmk/la.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/lmk/gun.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/lmk/gun.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/lmk/report.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/lmk/report.png" id="post-img"></a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>

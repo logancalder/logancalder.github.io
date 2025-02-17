@@ -106,15 +106,25 @@ body{
 }
 
 
-.container{
-    justify-content: center;
-    display:flex;
-    max-width: 100%;
-    flex-wrap: wrap;
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+    align-items: start;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.2s ease;
 }
 
 .projects div{
-    padding: 0 20px 50px 20px;
+    padding: 0 20px 50px 0;
 }
 
 .projects img{
@@ -136,11 +146,6 @@ body{
     text-align:left;
     overflow:hidden;
 }
-
-.project{
-    display:block;
-}
-
 
 
 #post-title{
@@ -343,7 +348,7 @@ body{
     }
 
     .projects div{
-        padding: 0 20px 0px 20px;
+        padding: 0 20px 0px 0;
     }
 
     .container{
