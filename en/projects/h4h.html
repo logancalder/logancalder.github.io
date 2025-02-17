@@ -87,7 +87,7 @@
             <li class="nav-button"><a href="../about">About</a></li>
             <li class="nav-button"><a href="../projects">Projects</a></li>
             <li class="nav-button"><a href="../tutor">Tutor</a></li>
-            <li class="lang-button"><a href="../../es/projects/treehacks">Español</a></li>
+            <li class="lang-button"><a href="../../es/projects/h4h">Español</a></li>
         </ul>
     </div>
     
@@ -96,61 +96,59 @@
     </div>
 
     <div class="content">
-        <h2 class="research">I had the pleasure of competing in SCU's <span id="r">Hack 4 Humanity 2025</span>.</h2>
-        
-        <p>My team's project for this hackathon was <span id="r">lmk</span>, an <span id="r">AI</span> and <span id="r">Next.js</span> based web service that could effectively analyze dangerous scenarios and alert respective users within close proximity.</p>
-        
-        <p>Our project was inspired by ethical concerns such as the <span id="r">bystander effect</span> and <span id="r">reporting bias</span>. People tend to hesitate to report incidents, assuming someone else will, often leading to unresolved issues. In some communities, severe incidents may be downplayed or ignored due to social pressures. We were further motivated to develop a solution due to the recent (as of the time of this writing) fires in <span id="r">Pacific Palisades</span> and the general <span id="r">Los Angeles</span> region.</p>
-        
-        <p><span id="r">lmk</span> is a platform designed to lower the barrier to reporting hazards, providing visibility to local incidents. Working to keep communities safe, this project is designed to be entirely crowd-sourced, allowing the public to maintain the service's data fully.</p>
-        
-        <p>The workflow for our project involved an incredibly well-polished frontend linked with a powerful backend and database. We utilized <span id="r">Next.js</span>, <span id="r">TailwindCSS</span>, <span id="r">ShadCN</span>, and <span id="r">Mapbox</span> to develop a professional-looking interface, complete with animations, an interactable map, and forms to submit. The backend supported this UI with <span id="r">Next.js</span>, <span id="r">Mapbox API</span>, <span id="r">OpenAI API</span>, and <span id="r">Supabase</span> (a PostgreSQL database).</p>
-        
-        <p>While some tasks were able to be completed with simple JSON retrieval, we utilized OpenAI's <span id="r">GPT 4</span> and <span id="r">4-Turbo</span> to develop an intellectually strong collection of AI agents, working together to populate pre-designed JSON templates. This data would then be sent to Supabase, from which we could fetch the data to be displayed on the map or in reports.</p>
-        
-        <p>We also designed this project with it being a startup in mind, so user authentication through <span id="r">Google accounts</span> and <span id="r">Supabase</span> provided the much-needed authorization and security for our application. Provided that this is implemented, it would not be challenging to implement paid features, permitting this project to turn into a business.</p>
-        
-        <p>Future plans for this project also include social media integration, through which we would scan posts to detect harmful or dangerous areas and appropriately warn users. Combined with this, we may send SMS messages to users if they enable location sharing with us, permitting us to warn them without the need to open the app. As an optimization, we could also revise our AI agents to work in parallel as opposed to concurrently, so as to significantly improve our submission runtime (~ 50% decrease in runtime).</p>
-        
-        <p>This project's source code is public and viewable <a id="r" href="https://github.com/NicholasLe04/hackforhumanity">here</a>, our Devpost <a id="r" href="https://devpost.com/software/lmk-2tzig6">here</a> and deployment <a id="r" href="https://lmk-kappa.vercel.app/">here</a>.</p>
-    </div>
-
-    <div class = "gallery">
-        <div class = "container">
-            
-            <div class = "photo">
-                <a href="../../images/projects/lmk/home.png" data-lightbox="models" class="imagecrop">
-                <img src="../../images/projects/lmk/home.png" id="post-img"></a>
-            </div>
-            
-            <div class = "photo">
-                <a href="../../images/projects/lmk/map.png" data-lightbox="models" class="imagecrop">
-                <img src="../../images/projects/lmk/map.png" id="post-img"></a>
-            </div>
-
-            <div class = "photo">
-                <a href="../../images/projects/lmk/report.png" data-lightbox="models" class="imagecrop">
-                <img src="../../images/projects/lmk/report.png" id="post-img"></a>
-            </div>
-
-            <div class = "photo">
-                <a href="../../images/projects/lmk/la.png" data-lightbox="models" class="imagecrop">
-                <img src="../../images/projects/lmk/la.png" id="post-img"></a>
-            </div>
-
-            <div class = "photo">
-                <a href="../../images/projects/lmk/gun.png" data-lightbox="models" class="imagecrop">
-                <img src="../../images/projects/lmk/gun.png" id="post-img"></a>
-            </div>
-
-            <div class = "photo">
-                <a href="../../images/projects/lmk/report.png" data-lightbox="models" class="imagecrop">
-                <img src="../../images/projects/lmk/report.png" id="post-img"></a>
-            </div>
+        <div id="project-content">
+            <!-- Content will be dynamically loaded here -->
         </div>
     </div>
 
-    
+    <div class="gallery">
+        <div class="container" id="gallery-container">
+            <!-- Images will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { supabase } from '../../lib/supabaseClient.js';
+
+        async function loadProject() {
+            try {
+                const { data: project, error } = await supabase
+                    .from('projects')
+                    .select('*')
+                    .eq('title', 'H4H 2025')
+                    .single();
+
+                if (error) throw error;
+
+                // Update content
+                const content = document.getElementById('project-content');
+                content.innerHTML = `
+                    <h2 class="research">I had the pleasure of competing in SCU's <span id="r">${project.title}</span>.</h2>
+                    <p>${project.description}</p>
+                    ${project.github_url ? `<p>This project's source code is public and viewable <a id="r" href="${project.github_url}">here</a>` : ''}
+                    ${project.devpost_url ? `, our Devpost <a id="r" href="${project.devpost_url}">here</a>` : ''}
+                    ${project.demo_url ? ` and deployment <a id="r" href="${project.demo_url}">here</a>.</p>` : ''}
+                `;
+
+                // Update gallery
+                const gallery = document.getElementById('gallery-container');
+                gallery.innerHTML = project.gallery_images.map(img => `
+                    <div class="photo">
+                        <a href="${img}" data-lightbox="models" class="imagecrop">
+                            <img src="${img}" id="post-img">
+                        </a>
+                    </div>
+                `).join('');
+
+            } catch (error) {
+                console.error('Error loading project:', error);
+            }
+        }
+
+        // Load project when page loads
+        document.addEventListener('DOMContentLoaded', loadProject);
+    </script>
+
     <div class = "footer">
         Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
     </div>

@@ -73,7 +73,7 @@
                 <li class="nav-button"><a href="../about">Sobre Mí</a></li>
                 <li class="nav-button"><a href="../projects">Proyectos</a></li>
                 <li class="nav-button"><a href="../tutor">Tutoría</a></li>
-                <li class="lang-button"><a href="../../en/projects/h4h">English</a></li>
+                <li class="lang-button"><a href="../../en/projects/hpe">English</a></li>
             </ul>
         </nav>
         <div onclick = "toggleNavBar()" class = "nav-menu-container">
@@ -96,23 +96,23 @@
     </div>
 
     <div class="content">
-        <h2 class="research">Tuve el placer de competir en el <span id="r">Hack 4 Humanity 2025</span> de SCU.</h2>
+        <h2 class="research">I had the pleasure of competing in SCU's <span id="r">Hack 4 Humanity 2025</span>.</h2>
         
-        <p>El proyecto de nuestro equipo para este hackathon fue <span id="r">lmk</span>, un servicio web basado en <span id="r">IA</span> y <span id="r">Next.js</span> que podía analizar eficazmente situaciones peligrosas y alertar a los usuarios respectivos en las proximidades.</p>
+        <p>My team's project for this hackathon was <span id="r">lmk</span>, an <span id="r">AI</span> and <span id="r">Next.js</span> based web service that could effectively analyze dangerous scenarios and alert respective users within close proximity.</p>
         
-        <p>Nuestro proyecto fue inspirado por preocupaciones éticas como el <span id="r">efecto espectador</span> y el <span id="r">sesgo de reporte</span>. La gente tiende a dudar en reportar incidentes, asumiendo que alguien más lo hará, lo que a menudo lleva a problemas sin resolver. En algunas comunidades, los incidentes graves pueden ser minimizados o ignorados debido a presiones sociales. Nos motivamos aún más a desarrollar una solución debido a los recientes (al momento de escribir esto) incendios en <span id="r">Pacific Palisades</span> y la región general de <span id="r">Los Ángeles</span>.</p>
+        <p>Our project was inspired by ethical concerns such as the <span id="r">bystander effect</span> and <span id="r">reporting bias</span>. People tend to hesitate to report incidents, assuming someone else will, often leading to unresolved issues. In some communities, severe incidents may be downplayed or ignored due to social pressures. We were further motivated to develop a solution due to the recent (as of the time of this writing) fires in <span id="r">Pacific Palisades</span> and the general <span id="r">Los Angeles</span> region.</p>
         
-        <p><span id="r">lmk</span> es una plataforma diseñada para reducir la barrera para reportar peligros, proporcionando visibilidad a incidentes locales. Trabajando para mantener seguras las comunidades, este proyecto está diseñado para ser completamente colaborativo, permitiendo que el público mantenga completamente los datos del servicio.</p>
+        <p><span id="r">lmk</span> is a platform designed to lower the barrier to reporting hazards, providing visibility to local incidents. Working to keep communities safe, this project is designed to be entirely crowd-sourced, allowing the public to maintain the service's data fully.</p>
         
-        <p>El flujo de trabajo de nuestro proyecto involucró un frontend increíblemente bien pulido vinculado con un potente backend y base de datos. Utilizamos <span id="r">Next.js</span>, <span id="r">TailwindCSS</span>, <span id="r">ShadCN</span>, y <span id="r">Mapbox</span> para desarrollar una interfaz de aspecto profesional, completa con animaciones, un mapa interactivo y formularios para enviar. El backend respaldó esta interfaz de usuario con <span id="r">Next.js</span>, <span id="r">API de Mapbox</span>, <span id="r">API de OpenAI</span>, y <span id="r">Supabase</span> (una base de datos PostgreSQL).</p>
+        <p>The workflow for our project involved an incredibly well-polished frontend linked with a powerful backend and database. We utilized <span id="r">Next.js</span>, <span id="r">TailwindCSS</span>, <span id="r">ShadCN</span>, and <span id="r">Mapbox</span> to develop a professional-looking interface, complete with animations, an interactable map, and forms to submit. The backend supported this UI with <span id="r">Next.js</span>, <span id="r">Mapbox API</span>, <span id="r">OpenAI API</span>, and <span id="r">Supabase</span> (a PostgreSQL database).</p>
         
-        <p>Mientras que algunas tareas se pudieron completar con simple recuperación de JSON, utilizamos <span id="r">GPT 4</span> y <span id="r">4-Turbo</span> de OpenAI para desarrollar una colección intelectualmente fuerte de agentes de IA, trabajando juntos para poblar plantillas JSON prediseñadas. Estos datos luego se enviaban a Supabase, de donde podíamos obtener los datos para mostrarlos en el mapa o en informes.</p>
+        <p>While some tasks were able to be completed with simple JSON retrieval, we utilized OpenAI's <span id="r">GPT 4</span> and <span id="r">4-Turbo</span> to develop an intellectually strong collection of AI agents, working together to populate pre-designed JSON templates. This data would then be sent to Supabase, from which we could fetch the data to be displayed on the map or in reports.</p>
         
-        <p>También diseñamos este proyecto pensando en que fuera una startup, por lo que la autenticación de usuarios a través de <span id="r">cuentas de Google</span> y <span id="r">Supabase</span> proporcionó la muy necesaria autorización y seguridad para nuestra aplicación. Dado que esto está implementado, no sería difícil implementar funciones de pago, permitiendo que este proyecto se convierta en un negocio.</p>
+        <p>We also designed this project with it being a startup in mind, so user authentication through <span id="r">Google accounts</span> and <span id="r">Supabase</span> provided the much-needed authorization and security for our application. Provided that this is implemented, it would not be challenging to implement paid features, permitting this project to turn into a business.</p>
         
-        <p>Los planes futuros para este proyecto también incluyen la integración con redes sociales, a través de la cual escanearíamos publicaciones para detectar áreas dañinas o peligrosas y advertir apropiadamente a los usuarios. Combinado con esto, podríamos enviar mensajes SMS a los usuarios si habilitan compartir ubicación con nosotros, permitiéndonos advertirles sin necesidad de abrir la aplicación. Como optimización, también podríamos revisar nuestros agentes de IA para trabajar en paralelo en lugar de concurrentemente, para mejorar significativamente nuestro tiempo de envío (~ 50% de reducción en tiempo de ejecución).</p>
+        <p>Future plans for this project also include social media integration, through which we would scan posts to detect harmful or dangerous areas and appropriately warn users. Combined with this, we may send SMS messages to users if they enable location sharing with us, permitting us to warn them without the need to open the app. As an optimization, we could also revise our AI agents to work in parallel as opposed to concurrently, so as to significantly improve our submission runtime (~ 50% decrease in runtime).</p>
         
-        <p>El código fuente de este proyecto es público y se puede ver <a id="r" href="https://github.com/NicholasLe04/hackforhumanity">aquí</a>, nuestro Devpost <a id="r" href="https://devpost.com/software/lmk-2tzig6">aquí</a> y el despliegue <a id="r" href="https://lmk-kappa.vercel.app/">aquí</a>.</p>
+        <p>This project's source code is public and viewable <a id="r" href="https://github.com/NicholasLe04/hackforhumanity">here</a>, our Devpost <a id="r" href="https://devpost.com/software/lmk-2tzig6">here</a> and deployment <a id="r" href="https://lmk-kappa.vercel.app/">here</a>.</p>
     </div>
 
     <div class = "gallery">
