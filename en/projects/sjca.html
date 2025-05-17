@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - SJCA</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+</script>
+<script src="../../lightbox-plus-jquery.js"></script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home">Home</a></li>
+                <li class="nav-button"><a href="../about">About</a></li>
+                <li class="nav-button"><a href="../projects">Projects</a></li>
+                <li class="nav-button"><a href="../tutor">Tutor</a></li>
+                <li class="lang-button"><a href="../../es/projects/sjca">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home">Home</a></li>
+            <li class="nav-button"><a href="../about">About</a></li>
+            <li class="nav-button"><a href="../projects">Projects</a></li>
+            <li class="nav-button"><a href="../tutor">Tutor</a></li>
+            <li class="lang-button"><a href="../../es/projects/sjca">Español</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/sjca.png" id="header">
+        <!-- <div class = "text">CMTM Website</div> -->
+    </div>
+
+    <div class = "content">
+        <h2 class="cream">In March of 2025, I was commissioned by San Jose Christian Assembly to revamp their website.</h2>
+        
+        <p>My local church, <span class="b">San Jose Christian Assembly</span>, approached me to modernize their web presence. The previous website was outdated and lacked interactive features that could engage the congregation. Using modern web technologies like <span class="b">TypeScript</span> and <span class="b">Next.js</span>, I developed a dynamic and responsive website that serves both the congregation and administrative needs.</p>
+        
+        <p>The website features several key interactive elements, including a <span class="b">readable Bible</span> with verse highlighting and note-taking capabilities, an <span class="b">interactive timeline</span> showcasing the church's history, and <span class="b">animated page transitions</span> that create a polished user experience. The site is built with a mobile-first approach, ensuring accessibility across all devices.</p>
+        
+        <p>One of the major improvements is the integration of a <span class="b">Supabase database</span>, allowing administrative users to easily update content without touching code. This includes managing <span class="b">event announcements</span>, <span class="b">sermon archives</span>, and <span class="b">ministry updates</span>. The admin dashboard provides a user-friendly interface for content management, while maintaining security through role-based access control.</p>
+        
+        <p>The website is deployed on <span class="b">Vercel</span>, ensuring fast load times and reliable performance. The deployment pipeline is automated, making updates seamless and immediate. The tech stack choice of Next.js enables server-side rendering, improving both performance and SEO rankings.</p>
+        
+        <p>Additional features include:</p>
+        <ul>
+            <li>Real-time prayer request system</li>
+            <li>Integrated calendar for church events</li>
+            <li>Sermon archive with search functionality</li>
+            <li>Ministry team profiles and contact information</li>
+            <li>Automated email notifications for important updates</li>
+        </ul>
+        
+        <br>
+        <p style="color:white; font-weight: bold;">The project's source code is available on GitHub <a class="link" href="https://github.com/logancalder/SJCA-Website" target="_blank" style="color:aquamarine">here</a>.</p>
+        <p style="color:white; font-weight: bold;">Visit the live website <a class="link" href="https://sjca.vercel.app" target="_blank" style="color:aquamarine">here</a>.</p>
+    </div>
+
+    
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>

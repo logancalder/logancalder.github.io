@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - EMT Vision</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+    // ... keep existing script code ...
+</script>
+<script src="../../lightbox-plus-jquery.js"></script>
+
+<body>
+    <div class="nav-bar">
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home">Hogar</a></li>
+                <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+                <li class="nav-button"><a href="../projects">Proyectos</a></li>
+                <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+                <li class="lang-button"><a href="../../en/projects/emtvision">English</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home">Hogar</a></li>
+            <li class="nav-button"><a href="../about">Sobre Mí</a></li>
+            <li class="nav-button"><a href="../projects">Proyectos</a></li>
+            <li class="nav-button"><a href="../tutor">Tutoría</a></li>
+            <li class="lang-button"><a href="../../en/projects/emtvision">English</a></li>
+        </ul>
+    </div>
+    
+    <div class="header">
+        <img src="../../images/projects/banners/emtvisionbanner.jpg" id="header">
+    </div>
+
+    <div class="content">
+        <h2 class="emtvision">EMT Vision: Revolucionando la Respuesta Médica de Emergencia con Tecnología AR</h2>
+        
+        <p>Como mi proyecto de diseño senior en la <span class="emt">Universidad de Santa Clara</span>, desarrollado en colaboración con el <span class="emt">Departamento de Bomberos del Condado de Santa Clara</span> y financiado por la Escuela de Ingeniería, EMT Vision representa un avance en la tecnología de servicios médicos de emergencia. Este proyecto fue galardonado con el primer lugar en la Competencia de Diseño Senior 2025, reconociendo su enfoque innovador para resolver desafíos reales en la respuesta médica de emergencia.</p>
+
+        <h3>Descripción del Proyecto</h3>
+        <p>EMT Vision ofrece soluciones automatizadas y ligeras para minimizar las cargas de trabajo redundantes entre los primeros respondedores. Desarrollado por <span class="emt">Logan Calder, Grant Johnson, John Alvarado y Jack Landers</span>, bajo la guía del <span class="emt">Dr. Krishna Ramamoorthy</span>, este proyecto busca transformar la respuesta médica de emergencia a través de tecnología innovadora. Nuestra colaboración con el Departamento de Bomberos del Condado de Santa Clara proporcionó información invaluable sobre los desafíos diarios que enfrentan los primeros respondedores.</p>
+
+        <h3>El Problema</h3>
+        <p>En los servicios médicos de emergencia, cada segundo cuenta. Sin embargo, los sistemas actuales requieren un paramédico dedicado para la documentación durante cada llamada, impactando significativamente la eficiencia de la respuesta. Esto no solo extiende los tiempos de llamada sino que también introduce posibles errores en la información crítica del paciente. El proceso de documentación manual consume recursos valiosos que podrían utilizarse mejor en la atención directa del paciente.</p>
+
+        <h3>La Solución</h3>
+        <p>EMT Vision introduce un visor <span class="emt">Microsoft HoloLens 2</span> ligero y potenciado por IA que revoluciona el proceso de documentación. Al aprovechar el procesamiento de audio avanzado y los LLMs multimodales, el sistema genera automáticamente formularios de Informe de Atención al Paciente Electrónico (ePCR) mientras los paramédicos se centran en la atención del paciente. El visor también proporciona visualización de protocolos en tiempo real y seguimiento del progreso, asegurando una atención integral sin comprometer la eficiencia.</p>
+
+        <h3>Arquitectura Técnica</h3>
+        <p>El proyecto consta de dos componentes principales: una aplicación de visor AR y una plataforma web. La aplicación del visor, construida con <span class="emt">Unity</span> y <span class="emt">C#</span>, integra <span class="emt">Microsoft Azure Speech Services</span> para la transcripción en tiempo real y <span class="emt">OpenAI GPT-4</span> para la población inteligente de formularios. Todos los datos del paciente se almacenan de forma segura utilizando el sistema de base de datos compatible con HIPAA de <span class="emt">Supabase</span>.</p>
+
+        <p>La plataforma web, desarrollada con <span class="emt">Next.js</span> y <span class="emt">TypeScript</span>, proporciona una interfaz segura para que los profesionales médicos accedan a la información del paciente. La autenticación se maneja a través de <span class="emt">Google Cloud Platform OAuth</span>, asegurando que solo el personal autorizado pueda acceder a datos sensibles. Todo el sistema está desplegado en <span class="emt">Vercel</span>, proporcionando un alojamiento confiable y escalable.</p>
+
+        <h3>Pruebas y Resultados</h3>
+        <p>Nuestra fase de pruebas rigurosa demostró la confiabilidad del sistema en condiciones del mundo real. El visor logró un 89% de precisión en entornos con múltiples hablantes, un 94% de precisión en condiciones ruidosas y un 98% de precisión en el manejo de información corregida. Estos resultados, combinados con comentarios positivos de los primeros respondedores, contribuyeron al éxito de nuestro proyecto en la Competencia de Diseño Senior.</p>
+
+        <h3>Desarrollo Futuro</h3>
+        <p>Construyendo sobre nuestro éxito, planeamos mejorar las medidas de cumplimiento HIPAA y seguridad del sistema. Los desarrollos futuros incluyen la implementación de capacidades de escaneo de documentos e identificación, la mejora del hardware con mejores micrófonos y la adición de características avanzadas de UI para el seguimiento de medicamentos. Estas mejoras optimizarán aún más los procedimientos de respuesta de emergencia mientras mantienen los más altos estándares de atención al paciente y seguridad de datos.</p>
+
+        <br>
+        <p style="color:white; font-weight: bold;">Ver nuestro video de demostración <a class="link" href="https://youtu.be/hoeBIpp5nHY" target="_blank" style="color:aquamarine">aquí</a>.</p>
+        <p style="color:white; font-weight: bold;">Visitar nuestra plataforma web <a class="link" href="https://emtvision.vercel.app" target="_blank" style="color:aquamarine">aquí</a>.</p>
+    </div>
+
+    <div class="gallery">
+        <div class="container">
+            <div class="photo">
+                <a href="../../images/projects/emtvision/pres.jpg" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/pres.jpg" id="post-img"></a>
+            </div>
+            
+            <div class="photo">
+                <a href="../../images/projects/emtvision/patient.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/patient.png" id="post-img"></a>
+            </div>
+
+            <div class="photo">
+                <a href="../../images/projects/emtvision/website.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/website.png" id="post-img"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Made with <span style="color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>

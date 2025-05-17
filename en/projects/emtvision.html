@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>LC - EMT Vision</title>
+    <link rel="stylesheet" href="style-project-page.css">
+    <link rel="stylesheet" type="text/css" href="../../lightbox.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../images/lc.png">
+</head>
+
+<script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('.nav-bar');
+            const content = document.querySelector('.content');
+            const projects = document.querySelector('.projects');
+
+            let num = window.scrollY / window.innerHeight;
+            if(num > 0){
+                header.classList.add('scrolled');
+                content.classList.add('scrolled');
+                projects.classList.add('scrolled');
+            }else{
+                header.classList.remove('scrolled');
+                content.classList.remove('scrolled');
+                projects.classList.remove('scrolled');
+            }
+            });
+        function select(category) {
+            var all = document.getElementsByClassName('project');
+            var personal = document.getElementsByClassName('personal');
+            var work = document.getElementsByClassName('work');
+            
+            if (category == "all") {
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.display = "block";
+                }
+            } else if (category == "work") {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "none";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < personal.length; i++) {
+                    personal[i].style.display = "block";
+                }
+                for (var i = 0; i < work.length; i++) {
+                    work[i].style.display = "none";
+                }
+            }
+        };
+        function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+</script>
+<script src="../../lightbox-plus-jquery.js"></script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <a href="../home"><img class="logo" src="../../images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="../home">Home</a></li>
+                <li class="nav-button"><a href="../about">About</a></li>
+                <li class="nav-button"><a href="../projects">Projects</a></li>
+                <li class="nav-button"><a href="../tutor">Tutor</a></li>
+                <li class="lang-button"><a href="../../es/projects/emtvision">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick = "toggleNavBar()" class = "nav-menu-container">
+            <i class="fa-solid fa-bars" id = "nav-menu-button"></i>
+        </div>
+    </div>
+
+    <div id = "mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="../home">Home</a></li>
+            <li class="nav-button"><a href="../about">About</a></li>
+            <li class="nav-button"><a href="../projects">Projects</a></li>
+            <li class="nav-button"><a href="../tutor">Tutor</a></li>
+            <li class="lang-button"><a href="../../es/projects/emtvision">Español</a></li>
+        </ul>
+    </div>
+    
+    <div class = "header">
+        <img src="../../images/projects/banners/emtvisionbanner.jpg" id="header">
+    </div>
+
+    <div class = "content">
+        <h2 class="emtvision">EMT Vision: Revolutionizing Emergency Medical Response with AR Technology</h2>
+        
+        <p>As my senior design project at <span class="emt">Santa Clara University</span>, developed in collaboration with the <span class="emt">Santa Clara County Fire Department</span> and funded by the School of Engineering, EMT Vision represents a breakthrough in emergency medical services technology. This project was awarded first place in the 2025 Senior Design Competition, recognizing its innovative approach to solving real-world challenges in emergency medical response.</p>
+
+        <h3>Project Overview</h3>
+        <p>EMT Vision offers automated and lightweight solutions for minimizing redundant workloads among first responders. Developed by <span class="emt">Logan Calder, Grant Johnson, John Alvarado, and Jack Landers</span>, under the guidance of <span class="emt">Dr. Krishna Ramamoorthy</span>, this project aims to transform emergency medical response through innovative technology. Our collaboration with the Santa Clara County Fire Department provided invaluable insights into the daily challenges faced by first responders.</p>
+
+        <h3>The Problem</h3>
+        <p>In emergency medical services, every second counts. Yet, current systems require a dedicated paramedic for form documentation during each call, significantly impacting response efficiency. This not only extends call times but also introduces potential errors in critical patient information. The manual documentation process consumes valuable resources that could be better utilized in direct patient care.</p>
+
+        <h3>The Solution</h3>
+        <p>EMT Vision introduces a lightweight, AI-powered <span class="emt">Microsoft HoloLens 2</span> headset that revolutionizes the documentation process. By leveraging advanced audio processing and multimodal LLMs, the system automatically generates electronic Patient Care Report (ePCR) forms while paramedics focus on patient care. The headset also provides real-time protocol visualization and progress tracking, ensuring comprehensive care without compromising efficiency.</p>
+
+        <h3>Technical Architecture</h3>
+        <p>The project consists of two main components: an AR headset application and a web platform. The headset application, built with <span class="emt">Unity</span> and <span class="emt">C#</span>, integrates <span class="emt">Microsoft Azure Speech Services</span> for real-time transcription and <span class="emt">OpenAI GPT-4</span> for intelligent form population. All patient data is securely stored using <span class="emt">Supabase</span>'s HIPAA-compliant database system.</p>
+
+        <p>The web platform, developed with <span class="emt">Next.js</span> and <span class="emt">TypeScript</span>, provides a secure interface for medical professionals to access patient information. Authentication is handled through <span class="emt">Google Cloud Platform OAuth</span>, ensuring that only authorized personnel can access sensitive data. The entire system is deployed on <span class="emt">Vercel</span>, providing reliable and scalable hosting.</p>
+
+        <h3>Testing & Results</h3>
+        <p>Our rigorous testing phase demonstrated the system's reliability in real-world conditions. The headset achieved 89% accuracy in multi-speaker environments, 94% accuracy in noisy conditions, and 98% accuracy in handling corrected information. These results, combined with positive feedback from first responders, contributed to our project's success in the Senior Design Competition.</p>
+
+        <h3>Future Development</h3>
+        <p>Building on our success, we plan to enhance the system's HIPAA compliance and security measures. Future developments include implementing document and ID scanning capabilities, improving hardware with better microphones, and adding advanced UI features for medication tracking. These improvements will further streamline emergency response procedures while maintaining the highest standards of patient care and data security.</p>
+
+        <br>
+        <p style="color:white; font-weight: bold;">View our project demo <a class="link" href="https://youtu.be/hoeBIpp5nHY" target="_blank" style="color:aquamarine">here</a>.</p>
+        <p style="color:white; font-weight: bold;">Visit our web platform <a class="link" href="https://emtvision.vercel.app" target="_blank" style="color:aquamarine">here</a>.</p>
+    </div>
+
+    <div class = "gallery">
+        <div class = "container">
+            <div class = "photo">
+                <a href="../../images/projects/emtvision/pres.jpg" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/pres.jpg" id="post-img"></a>
+            </div>
+            
+            <!-- <div class = "photo">
+                <a href="../../images/projects/emtvision/presenters.jpg" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/presenters.jpg" id="post-img"></a>
+            </div> -->
+
+            <div class = "photo">
+                <a href="../../images/projects/emtvision/patient.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/patient.png" id="post-img"></a>
+            </div>
+
+            <div class = "photo">
+                <a href="../../images/projects/emtvision/website.png" data-lightbox="models" class="imagecrop">
+                <img src="../../images/projects/emtvision/website.png" id="post-img"></a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class = "footer">
+        Made with <span style = "color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+</body>
+</html>
