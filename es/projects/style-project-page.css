@@ -139,6 +139,12 @@ display:none;
   -webkit-text-fill-color: transparent;
 }
 
+.emtvision{
+  background: -webkit-linear-gradient(right, #183f6a, #0080ff) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 .v2025{
   background: -webkit-linear-gradient(left, rgb(255, 206, 133) 20%, rgb(79, 197, 126) 70%) !important;
   -webkit-background-clip: text !important;
@@ -207,6 +213,10 @@ display:none;
 
 .ws{
   color: #2f8de0;
+}
+
+.emt{
+  color: #0080ff;
 }
 
 #r, .r{
