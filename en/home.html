@@ -38,9 +38,9 @@
         if(spanContent == "Skills"){
             content.textContent = "Python, C++, C, C#, Java, JS, HTML & CSS, Next.js, Supabase, Docker";
         } else if(spanContent == "Experience"){
-            content.textContent = "2x SWE Intern @ Aruba Networks\nResearch Assistant @ SCU";
+            content.textContent = "3x SWE Intern @ Aruba Networks\nSWE Intern @ Evil Geniuses\nSWE Intern @ Austin FC\nResearch Assistant @ SCU";
         } else{
-            content.textContent = "Santa Clara Unviersity, B.S. 2025\nComputer Science & Engineering";
+            content.textContent = "UC Berkeley, MIDS 2026\nData Science & Engineering";
         }
         
         // Remove 'selected' class from all spans
@@ -60,6 +60,7 @@
         console.log(element);
         element.classList.toggle("fade");
     };
+
 </script>
 
 <input type="file" id="fileInput" style="display: none;">
@@ -96,7 +97,7 @@
     <div class = "header">
         <div class = "header-text">
             <div class = "intro">Hi there, I'm<br><span id = "name">Logan Calder</span>.</div>
-            <div class = "bio">I'm a Computer Science student at Santa Clara University with 2 years of industry experience.</div>
+            <div class = "bio">I'm a MIDS student at UC Berkeley with 3 years of industry experience.</div>
             <div class = "buttons">
                 <button id = "colored-button" onclick="scrollToDiv()">Contact</button>
                 <a href = "../lc_resume.pdf" target="_blank"><button id = "transparent-button">Download CV</button></a>
@@ -107,17 +108,43 @@
 
     <img src="../images/pfp.JPG" id="img_mobile">
 
+    <!-- Featured Project Section -->
+    <div class="featured-project">
+        <div class="featured-hero">
+            <div class="hero-video">
+                <a href="projects/emtvision">
+                    <video autoplay muted loop playsinline controls="false" disablepictureinpicture>
+                        <source src="../emtvisiondemo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-mask"></div>
+                </a>
+            </div>
+            <div class="hero-content">
+                <div class="project-badge">🏆 Senior Design Winner</div>
+                <h2>EMT Vision</h2>
+                <h3>Senior Design 2025</h3>
+                <p>First place winner offering AR-based automatic population of ePCR forms. This innovative solution streamlines emergency medical documentation through cutting-edge augmented reality technology.</p>
+                <div class="project-tech">
+                    <span>C#</span>
+                    <span>Next.js</span>
+                    <span>AR/VR</span>
+                </div>
+                <div class="project-date">May 9, 2025</div>
+            </div>
+        </div>
+    </div>
+
     <div class = "content">
         <h1>About Me</h1>
-        <p>I am an aspiring Software Developer with interests in medical technologies, machine learning, and optimization. My strengths lie in quick-learning capabilities and a driven mindset. <br><br>I have worked as a Software Engineering intern at Hewlett Packard Enterprise's Aruba Networks for two years, working on fullstack developer tools for network connections. My work has been utilized by over 100 developers, quality assurance and sales engineers, and customer service representatives.
-        <br><br>This website was made with pure HTML, CSS, and JS. <b>No AI. No frameworks. Just me</b>.</p>
+        <p>I am an aspiring Software Developer with interests in medical technologies, machine learning, and optimization. My strengths lie in quick-learning capabilities and a driven mindset. <br><br>I have worked as a Software Engineering intern at Evil Geniuses (Peak6 subsidiary) for the last year, developing an internal VOD review tool utilized by the entirety of the company's coaches and marketing staff, as well as working for Austin FC. <br><br>Additionally, I worked two summers at Hewlett Packard Enterprise's Aruba Networks, working on fullstack developer tools for network connections. My work has been utilized by over 100 developers, quality assurance and sales engineers, and customer service representatives.</p>
         <br>
         <div id = "skill-buttons">
-            <span class = "about-skill hover-button" onclick="toggleSelection(this)">Skills</span>
+            <span class = "about-skill hover-button selected" onclick="toggleSelection(this)">Skills</span>
             <span class = "about-skill hover-button" onclick="toggleSelection(this)">Education</span>
             <span class = "about-skill hover-button" onclick="toggleSelection(this)">Experience</span>
         </div>
-        <div id = "skills-content">Python, C, C++, C#, Java, JS, HTML & CSS, Unity, mySQL, K8, Docker</div> <!-- This becomes the skills list per category -->
+        <div id = "skills-content" style="opacity: 1;">Python, C, C++, C#, Java, JS, HTML & CSS, Unity, mySQL, K8, Docker</div> <!-- This becomes the skills list per category -->
     </div>
 
     <div class = "projects">

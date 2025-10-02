@@ -38,9 +38,9 @@
         if(spanContent == "Habilidades"){
             content.textContent = "Python, C, C++, C#, Java, JS, HTML & CSS, Unity, mySQL, K8s, Docker";
         } else if(spanContent == "Experiencia"){
-            content.textContent = "2x Pasante de SWE @ Aruba Networks\nAsistente de Investigación @ SCU";
+            content.textContent = "3x Pasante de SWE @ Aruba Networks\nPasante de SWE @ Evil Geniuses\nPasante de SWE @ Austin FC\nAsistente de Investigación @ SCU";
         } else{
-            content.textContent = "Universidad de Santa Clara, B.S. 2025\nCiencias de la Computación e Ingeniería";
+            content.textContent = "UC Berkeley, MIDS 2026\nCiencia de Datos e Ingeniería";
         }
         
         // Remove 'selected' class from all spans
@@ -60,6 +60,7 @@
         console.log(element);
         element.classList.toggle("fade");
     };
+
 </script>
 
 <input type="file" id="fileInput" style="display: none;">
@@ -96,7 +97,7 @@
     <div class = "header">
         <div class = "header-text">
             <div class = "intro">Hola, soy<br><span id = "name">Logan Calder</span>.</div>
-            <div class = "bio">Soy un estudiante de ciencias de computación en la Universidad de Santa Clara con 2 años de experiencia en la industria.</div>
+            <div class = "bio">Soy un estudiante de MIDS en UC Berkeley con 3 años de experiencia en la industria.</div>
             <div class = "buttons">
                 <button id = "colored-button" onclick="scrollToDiv()">Contactar</button>
                 <a href = "../lc_resume.pdf" target="_blank"><button id = "transparent-button">Descargar CV</button></a>
@@ -107,17 +108,44 @@
 
     <img src="../images/pfp.JPG" id="img_mobile">
 
+    <!-- Sección de Proyecto Destacado -->
+    <div class="featured-project">
+        <div class="featured-hero">
+            <div class="hero-video">
+                <a href="projects/emtvision">
+                    <video autoplay muted loop playsinline controls="false" disablepictureinpicture>
+                        <source src="../emtvisiondemo.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="video-mask"></div>
+                </a>
+            </div>
+            <div class="hero-content">
+                <div class="project-badge">🏆 Ganador Diseño Senior</div>
+                <h2>EMT Vision</h2>
+                <h3>Diseño Senior 2025</h3>
+                <p>Ganador del primer lugar ofreciendo llenado automático de formularios ePCR basado en AR. Esta solución innovadora optimiza la documentación médica de emergencia a través de tecnología de realidad aumentada de vanguardia.</p>
+                <div class="project-tech">
+                    <span>C#</span>
+                    <span>Next.js</span>
+                    <span>AR/VR</span>
+                </div>
+                <div class="project-date">9 de mayo, 2025</div>
+            </div>
+        </div>
+    </div>
+
     <div class = "content">
         <h1>Sobre Mí</h1>
-        <p>Soy un programador de software con intereses en tecnologías médicas, software, y optimización. Mis fortalezas radican en las capacidades de aprendizaje rápido y una mentalidad impulsada.<br><br>He trabajado como pasante de ingeniería de software en Hewlett Packard Enterprise durante dos años, trabajando en herramientas de desarrollo de fullstack para conexiones de red. Mi trabajo ha sido utilizado por más de 100 desarrolladores, ingenieros de control de calidad y ventas, y representantes de servicio al cliente.
-        <br><br>Tambien disfruto ensenado y soy un mentor en los temas de Espanol, Python, y Alegbra a traves del calculo.</p>
+        <p>Soy un programador de software con intereses en tecnologías médicas, software, y optimización. Mis fortalezas radican en las capacidades de aprendizaje rápido y una mentalidad impulsada.<br><br>He trabajado como pasante de ingeniería de software en Evil Geniuses (subsidiaria de Peak6) durante el último año, desarrollando una herramienta interna de revisión de VOD utilizada por la totalidad de los entrenadores y personal de marketing de la empresa, así como trabajando para Austin FC. <br><br>Además, trabajé dos veranos en Hewlett Packard Enterprise's Aruba Networks, trabajando en herramientas de desarrollo fullstack para conexiones de red. Mi trabajo ha sido utilizado por más de 100 desarrolladores, ingenieros de control de calidad y ventas, y representantes de servicio al cliente.
+        <br><br>También disfruto enseñando y soy un mentor en los temas de Español, Python, y Álgebra a través del cálculo.</p>
         <br>
         <div id = "skill-buttons">
-            <span class = "about-skill hover-button" onclick="toggleSelection(this)">Habilidades</span>
+            <span class = "about-skill hover-button selected" onclick="toggleSelection(this)">Habilidades</span>
             <span class = "about-skill hover-button" onclick="toggleSelection(this)">Educación</span>
             <span class = "about-skill hover-button" onclick="toggleSelection(this)">Experiencia</span>
         </div>
-        <div id = "skills-content">Python, C, C++, C#, Java, JS, HTML & CSS, Unity, mySQL, K8, Docker</div> <!-- This becomes the skills list per category -->
+        <div id = "skills-content" style="opacity: 1;">Python, C, C++, C#, Java, JS, HTML & CSS, Unity, mySQL, K8, Docker</div> <!-- This becomes the skills list per category -->
     </div>
 
     <div class = "projects">
