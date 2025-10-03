@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logan Calder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/92c2b5b560.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="images/lc.png">
+</head>
+
+<!-- Other scripts -->
+
+<script>
+    document.addEventListener('scroll', () => {
+        const header = document.querySelector('.nav-bar');
+        const content = document.querySelector('.content');
+        const projects = document.querySelector('.projects');
+
+        let num = window.scrollY / window.innerHeight;
+        if(num > 0){
+            header.classList.add('scrolled');
+            content.classList.add('scrolled');
+            projects.classList.add('scrolled');
+        }else{
+            header.classList.remove('scrolled');
+            content.classList.remove('scrolled');
+            projects.classList.remove('scrolled');
+        }
+        });
+
+    function toggleSelection(element) {
+        var content = document.getElementById('skills-content');
+        
+        var spans = document.getElementsByClassName('about-skill');
+        var spanContent = element.textContent;
+        content.style.opacity = 1;
+        
+        // Get translations from language manager
+        const lang = window.languageManager ? window.languageManager.currentLanguage : 'en';
+        const translations = window.languageManager ? window.languageManager.translations[lang] : null;
+        
+        if(spanContent == (translations?.home?.skills || "Skills")){
+            content.innerHTML = translations?.home?.skillsContent || "Python, C++, C, C#, Java, JS, HTML & CSS, Next.js, Supabase, Docker";
+        } else if(spanContent == (translations?.home?.education || "Education")){
+            const educationText = translations?.home?.educationContent || "UC Berkeley, MIDS 2026\nSanta Clara University, B.S. Computer Science & Engineering";
+            content.innerHTML = educationText.replace(/\n/g, '<br>');
+        } else{
+            const experienceText = translations?.home?.experienceContent || "3x SWE Intern @ Aruba Networks\nSWE Intern @ Evil Geniuses\nSWE Intern @ Austin FC\nResearch Assistant @ SCU";
+            content.innerHTML = experienceText.replace(/\n/g, '<br>');
+        }
+        
+        // Remove 'selected' class from all spans
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].classList.remove('selected');
+        }
+        element.classList.add('selected');
+        };
+
+    function scrollToDiv() {
+        var div = document.getElementById('connect');
+        div.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    function toggleNavBar() {
+        var element = document.getElementById("mobile-nav-bar");
+        console.log(element);
+        element.classList.toggle("fade");
+    };
+
+</script>
+
+<input type="file" id="fileInput" style="display: none;">
+
+<!-- make fireflies for hannah to play with :") -->
+
+<body>
+    <div class="nav-bar">
+        <a href="home"><img class="logo" src="images/lc.png" alt="logo"></a>
+        <nav class="nav">
+            <ul>
+                <li class="nav-button"><a href="#" id="selected" data-translate="nav.home">Home</a></li>
+                <li class="nav-button"><a href="about" data-translate="nav.about">About</a></li>
+                <li class="nav-button"><a href="projects" data-translate="nav.projects">Projects</a></li>
+                <li class="nav-button"><a href="tutor" data-translate="nav.tutor">Tutor</a></li>
+                <li class="lang-button"><a href="#" data-translate="nav.switchTo">Español</a></li>
+            </ul>
+        </nav>
+        <div onclick="toggleNavBar()" class="nav-menu-container">
+            <i class="fa-solid fa-bars" id="nav-menu-button"></i>
+        </div>
+        
+    </div>
+        
+    <div id="mobile-nav-bar">
+        <ul>
+            <li class="nav-button"><a href="about" data-translate="nav.about">About</a></li>
+            <li class="nav-button"><a href="projects" data-translate="nav.projects">Projects</a></li>
+            <li class="nav-button"><a href="tutor" data-translate="nav.tutor">Tutor</a></li>
+            <li class="lang-button"><a href="#" data-translate="nav.switchTo">Español</a></li>
+        </ul>
+    </div>
+
+    <div class="header">
+        <div class="header-text">
+            <div class="intro" data-translate="home.title">Hi there, I'm<br><span id="name">Logan Calder</span>.</div>
+            <div class="bio" data-translate="home.bio">I'm a MIDS student at UC Berkeley with 3 years of industry experience.</div>
+            <div class="buttons">
+                <button id="colored-button" onclick="scrollToDiv()" data-translate="home.contactButton">Contact</button>
+                <a href="lc_resume.pdf" target="_blank"><button id="transparent-button" data-translate="home.downloadCV">Download CV</button></a>
+            </div>
+        </div>
+        <img src="images/pfp.JPG" id="img">
+    </div>
+
+    <img src="images/pfp.JPG" id="img_mobile">
+
+    <!-- Featured Project Section -->
+    <div class="featured-project">
+        <div class="featured-hero">
+            <div class="hero-video">
+                <a href="projects/emtvision.html">
+                    <video autoplay muted loop playsinline controls="false" disablepictureinpicture>
+                        <source src="emtvisiondemo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-mask"></div>
+                </a>
+            </div>
+            <div class="hero-content">
+                <div class="project-badge" data-translate="home.featuredProjectBadge">🏆 Senior Design Winner</div>
+                <h2 data-translate="home.featuredProjectTitle">EMT Vision</h2>
+                <h3 data-translate="home.featuredProjectSubtitle">Senior Design 2025</h3>
+                <p data-translate="home.featuredProjectDesc">First place winner offering AR-based automatic population of ePCR forms. This innovative solution streamlines emergency medical documentation through cutting-edge augmented reality technology.</p>
+                <div class="project-tech">
+                    <span>C#</span>
+                    <span>Next.js</span>
+                    <span>AR/VR</span>
+                </div>
+                <div class="project-date" data-translate="home.featuredProjectDate">May 9, 2025</div>
+            </div>
+        </div>
+        <div class="project-badge-mobile" data-translate="home.featuredProjectBadge">🏆 Senior Design Winner</div>
+    </div>
+
+    <div class="content">
+        <h1 data-translate="home.aboutMe">About Me</h1>
+        <p data-translate="home.aboutText">I am an aspiring Software Developer with interests in medical technologies, machine learning, and optimization. My strengths lie in quick-learning capabilities and a driven mindset. <br><br>I have worked as a Software Engineering intern at Evil Geniuses (Peak6 subsidiary) for the last year, developing an internal VOD review tool utilized by the entirety of the company's coaches and marketing staff, as well as working for Austin FC. <br><br>Additionally, I worked two summers at Hewlett Packard Enterprise's Aruba Networks, working on fullstack developer tools for network connections. My work has been utilized by over 100 developers, quality assurance and sales engineers, and customer service representatives.</p>
+        <br>
+        <div id="skill-buttons">
+            <span class="about-skill hover-button selected" onclick="toggleSelection(this)" data-translate="home.skills">Skills</span>
+            <span class="about-skill hover-button" onclick="toggleSelection(this)" data-translate="home.education">Education</span>
+            <span class="about-skill hover-button" onclick="toggleSelection(this)" data-translate="home.experience">Experience</span>
+        </div>
+        <div id="skills-content" style="opacity: 1;" data-translate="home.skillsContent">Python, C, C++, C#, Java, JS, HTML & CSS, Unity, mySQL, K8, Docker</div> <!-- This becomes the skills list per category -->
+    </div>
+
+    <div class="projects">
+        <h2 data-translate="home.featuredProjects">Featured Projects</h2>
+        <div class="gallery">
+            <div class="post">
+                <a href="projects/emtvision.html"><img src="images/projects/emt.jpg" id="post-img"></a>
+                <h3 id="post-title" data-translate="home.project1Title">EMT Vision - Senior Design 2025</h3>
+                <span id="post-date" data-translate="home.project1Date">May 9, 2025 <span style="font-size:x-small;">•</span> C#, Next.js</span>
+                <p id="post-desc" data-translate="home.project1Desc">First place winner of 2025 SCU Senior Design, offering AR-based automatic population of ePCR forms.</p>
+            </div>
+
+            <div class="post" id="middle">
+                <a href="projects/h4h.html"><img src="images/projects/lmk.jpg" id="post-img"></a>
+                <h3 id="post-title" data-translate="home.project2Title">H4H 2025 - lmk</h3>
+                <span id="post-date" data-translate="home.project2Date">February 16, 2025 <span style="font-size:x-small;">•</span> Next.JS, OpenAI API</span>
+                <p id="post-desc" data-translate="home.project2Desc">An AI-powered web service that analyzes and alerts users of dangerous scenarios in their area.</p>
+            </div>
+
+            <div class="post">
+                <a href="projects/valentines2025.html"><img src="images/projects/game_logo.jpg" id="post-img"></a>
+                <h3 id="post-title" data-translate="home.project3Title">Valentines 2025 Video Game</h3>
+                <span id="post-date" data-translate="home.project3Date">February 10, 2025 <span style="font-size:x-small;">•</span> C#</span>
+                <p id="post-desc" data-translate="home.project3Desc">I asked my girlfriend to be my Valentine with a video game this year!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="connect" id="connect">
+        <div class="connect-bio">
+            <h2 data-translate="home.connectTitle">Let's Connect!</h2>
+            <p data-translate="home.connectText">I am always looking to connect with new people! If you are interested in working with or learning more about me, please do feel free to fill out the form so we can begin talking.</p>
+            <a href="https://github.com/logancalder" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a><a href="https://www.linkedin.com/in/logancalder/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+        </div>
+        <div class="connect-form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="d8031e4e-c63c-4fbd-a229-c9d3c8ba641e">
+                <label for="name" data-translate="home.formName">Name:</label><br>
+                <input type="name" name="name" id="names" placeholder="Introduce yourself!" data-translate-placeholder="home.formNamePlaceholder" required><br><br>
+            
+                <label for="email" data-translate="home.formEmail">Email:</label><br>
+                <input type="email" name="email" id="email" placeholder="address@domain.com" data-translate-placeholder="home.formEmailPlaceholder" required><br><br>
+            
+                <label for="message" data-translate="home.formMessage">Message:</label><br>
+                <textarea id="message" name="message" id="message" placeholder="Why do you want to get connected?" data-translate-placeholder="home.formMessagePlaceholder" required></textarea><br><br>
+                
+                <input type="submit" value="Send" data-translate="home.formSubmit">
+
+            </form>
+        </div>
+    </div>
+
+    <div class="footer" data-translate="home.footer">
+        Made with <span style="color: white;font-weight: bold;">♥</span> by Logan C
+    </div>
+    
+    <!-- Load language management system -->
+    <script src="js/language.js"></script>
+</body>
+</html>
